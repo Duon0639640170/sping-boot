@@ -25,7 +25,7 @@ public class UserController {
     private UserService userService;
 	
 	@GetMapping("/user/all")
-    public ResponseEntity<List<UserEntity>> listUser() throws Exception {		
+    public ResponseEntity<List<UserEntity>> listUser() throws Exception  {		
         return new ResponseEntity<List<UserEntity>>(userService.findAll(), HttpStatus.OK);
     }
 	
