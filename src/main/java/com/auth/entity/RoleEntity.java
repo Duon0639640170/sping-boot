@@ -20,7 +20,7 @@ public class RoleEntity implements Serializable {
 	@Column(name = "id")
 	private Integer id;
 
-	@Column(name = "role_name")
+	@Column(name = "role_name" )
 	private String role_name;
 
 	@Column(name = "role_status")
