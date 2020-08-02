@@ -46,5 +46,12 @@ public class UserController {
         userService.delete(id);
         return new ResponseEntity<String>("success", HttpStatus.OK);
     }
+    
+    @PostMapping("/user/update")
+    @ResponseBody
+    public ResponseEntity<UserEntity> update(@Valid @RequestBody UserEntity user) throws Exception{
+    	return new ResponseEntity<UserEntity>(userService.update(user), HttpStatus.CREATED);
+    }
+
 
 }

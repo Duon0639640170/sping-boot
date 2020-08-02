@@ -13,5 +13,7 @@ public interface UserService {
 	public UserEntity findUserByUsername(String username) throws Exception;
 
 	public void delete(long id) throws Exception;
+	
+	public UserEntity update(UserEntity user) throws Exception;
 
 }

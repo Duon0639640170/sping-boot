@@ -69,4 +69,19 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 		}
 		return entity;
 	}
+	
+	@Override
+	public UserEntity update(UserEntity user) throws Exception {
+		UserEntity entity = userRepository.findById(user.getId()).get();
+		if (entity != null) {
+			entity.setFirst_name(user.getFirst_name());
+			entity.setLast_name(user.getLast_name());
+			entity.setAddress(user.getAddress());
+			entity.setTel(user.getTel());
+			entity.setGender(user.getGender());
+			userRepository.save(entity);
+		}
+		
+		return entity;
+	}
 }
