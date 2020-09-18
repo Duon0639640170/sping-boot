@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.auth.entity.UserEntity;
 
+
 public interface UserService {
 
 	public UserEntity save(UserEntity user) throws Exception;
@@ -16,4 +17,6 @@ public interface UserService {
 	
 	public UserEntity update(UserEntity user) throws Exception;
 
+	public UserEntity findUserByUserId(long id) throws Exception;
+	
 }

@@ -84,4 +84,9 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 		
 		return entity;
 	}
+	
+	@Override
+	public UserEntity findUserByUserId(long id) throws Exception {
+		return userRepository.findUserById(id);
+	}
 }

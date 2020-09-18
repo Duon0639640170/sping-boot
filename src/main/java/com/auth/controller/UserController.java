@@ -1,5 +1,7 @@
 package com.auth.controller;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -18,8 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.auth.entity.UserEntity;
 import com.auth.service.UserService;
 
+
+
+
 @RestController
-public class UserController {
+public class UserController  {
 	
 	@Autowired
     private UserService userService;
@@ -53,5 +58,12 @@ public class UserController {
     	return new ResponseEntity<UserEntity>(userService.update(user), HttpStatus.CREATED);
     }
 
-
+    
+    @GetMapping("/user-by-user/{id}")
+    @ResponseBody
+	public ResponseEntity<UserEntity> getUserId(@PathVariable long id) throws Exception {
+		UserEntity user = userService.findUserByUserId(id);
+		return new ResponseEntity<UserEntity>(user, HttpStatus.OK);
+	}
+    
 }
